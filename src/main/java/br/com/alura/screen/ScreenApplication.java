@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.alura.screen.model.DadosSerie;
+import br.com.alura.screen.services.Atividade1;
 import br.com.alura.screen.services.ConsumoAPI;
 import br.com.alura.screen.services.ConverterDados;
 
@@ -26,6 +27,9 @@ public class ScreenApplication implements CommandLineRunner {
 		
 		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
 		System.out.println(dados);
+		Atividade1 contador = new Atividade1();
+		contador.metodoPrincipal();
+		
 	}
 
 }

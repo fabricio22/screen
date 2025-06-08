@@ -15,5 +15,4 @@ public class ConverterDados implements IConverteDados{
 			throw new RuntimeException(e);
 		}
 	}
-
 }
