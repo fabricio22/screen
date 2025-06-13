@@ -1,4 +1,4 @@
-package br.com.alura.screen.services;
+package br.com.alura.screen.atividades.services;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -10,7 +10,7 @@ import java.util.Scanner;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.alura.screen.model.Tarefa;
+import br.com.alura.screen.atividades.model.Tarefa;
 
 public class Atividade1 {
 

@@ -1,4 +1,4 @@
-package br.com.alura.screen.model;
+package br.com.alura.screen.atividades.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
