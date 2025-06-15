@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import br.com.alura.screen.model.DadosEpisodio;
 import br.com.alura.screen.model.DadosSerie;
@@ -74,6 +74,19 @@ public class MenuPrincipal {
 				    " Data Lançamento: " + e.getDataLancameto().format(formatador)
 				));
 		
+		Map<Integer, Double> avaliacaoesPorTemporada = episodios.stream()
+				.filter(e -> e.getAvaliacao() > 0.0)
+				.collect(Collectors.groupingBy(Episodio::getTemporada, Collectors.averagingDouble(Episodio::getAvaliacao)));
+		System.out.println(avaliacaoesPorTemporada);
+		
+		DoubleSummaryStatistics est = episodios.stream()
+				.filter(e -> e.getAvaliacao() > 0.00)
+				.collect(Collectors.summarizingDouble(Episodio::getAvaliacao));
+		
+		System.out.println("Média: " + est.getAverage());
+		System.out.println("Melhor episódio: " +  est.getMax());
+		System.out.println("Pior episódio: " + est.getMin());
+		System.out.println("Quantidade: " + est.getCount());
 
 	}
 
